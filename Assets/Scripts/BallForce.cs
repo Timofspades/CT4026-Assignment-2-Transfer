@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallForce : MonoBehaviour
 {
     private GameObject maincamera;
+    public Rigidbody BallRigidBody;
+
+    private Slider PowerSlider;
     void Start()
     {
+        PowerSlider = GetComponent<Slider>();
         maincamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    private void OnMouseDown()
+    public void OnEndDrag()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(maincamera.transform.forward * 200.0f);
+        BallRigidBody.AddForce(maincamera.transform.forward * PowerSlider.value);
+        PowerSlider.value = 0f;
     }
 }

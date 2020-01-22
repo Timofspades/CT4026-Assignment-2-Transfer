@@ -29,7 +29,7 @@ public class CamraPositionScript : MonoBehaviour
         CamPivot.transform.position = GolfBall.transform.position;
         GolfCamra.transform.localPosition = CamOffset;
 
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(1))
         {
             float X = Input.GetAxis("Mouse X");
             float Y = Input.GetAxis("Mouse Y");
