@@ -7,6 +7,7 @@ public class CamraPositionScript : MonoBehaviour
     public GameObject GolfBall;
     public GameObject GolfCamra;
     public GameObject CamPivot;
+    public GameObject Arrow;
 
     public Vector3 CamOffset;
 
@@ -29,11 +30,37 @@ public class CamraPositionScript : MonoBehaviour
         CamPivot.transform.position = GolfBall.transform.position;
         GolfCamra.transform.localPosition = CamOffset;
 
-        if(Input.GetMouseButton(1))
+        float X = 0f;
+        float Y = 0f;
+#if UNITY_STANDLONE || UNITY_EDITOR
+        X = Input.GetAxis("Mouse X");
+        Y = Input.GetAxis("Mouse Y");
+#elif UNITY_ANDROID
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            float X = Input.GetAxis("Mouse X");
-            float Y = Input.GetAxis("Mouse Y");
+            Touch touch = Input.touches[i];
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    break;
+                case TouchPhase.Moved:
+                    X = touch.deltaPosition.x;
+                    Y = touch.deltaPosition.y;
+                    break;
+                case TouchPhase.Stationary:
+                    break;
+                case TouchPhase.Ended:
+                    break;
+                case TouchPhase.Canceled:
+                    break;
+            }
+        }
+#endif
 
+
+
+        if (Input.GetMouseButton(1))
+        {
             ZRot -= Y * RotationSpeed * Time.deltaTime;
             YRot += X * RotationSpeed * Time.deltaTime;
 
