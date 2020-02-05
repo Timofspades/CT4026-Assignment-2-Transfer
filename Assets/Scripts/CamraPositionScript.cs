@@ -64,7 +64,7 @@ public class CamraPositionScript : MonoBehaviour
             ZRot -= Y * RotationSpeed * Time.deltaTime;
             YRot += X * RotationSpeed * Time.deltaTime;
 
-            ZRot = Mathf.Clamp(ZRot, -80f, 80f);
+            ZRot = Mathf.Clamp(ZRot, -15f, 80f);
 
             Vector3 currentEuler = CamPivot.transform.eulerAngles;
 
