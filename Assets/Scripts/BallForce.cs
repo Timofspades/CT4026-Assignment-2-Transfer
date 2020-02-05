@@ -5,21 +5,33 @@ using UnityEngine.UI;
 
 public class BallForce : MonoBehaviour
 {
+    float currentScore = 0f;
+    //public Text Score;
+
     private GameObject maincamera;
     public Rigidbody BallRigidBody;
 
     private Slider PowerSlider;
     void Start()
     {
-        PowerSlider = GetComponent<Slider>();
+        PowerSlider = GetComponent<Slider>();       
+
         maincamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    
+    void Update()
+    {        
+        //Score.text = currentScore.ToString();
+    }
+
+
 
     public void OnEndDrag()
     {
         BallRigidBody.AddForce(maincamera.transform.forward * PowerSlider.value);
         PowerSlider.value = 0f;
+        GetComponent<ScoreScript>().addStroke();
+        //currentScore += 1;
+        
     }
 }
