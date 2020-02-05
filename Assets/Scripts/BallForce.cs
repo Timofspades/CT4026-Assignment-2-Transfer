@@ -15,6 +15,8 @@ public class BallForce : MonoBehaviour
         maincamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
+    
+
     public void OnEndDrag()
     {
         BallRigidBody.AddForce(maincamera.transform.forward * PowerSlider.value);
