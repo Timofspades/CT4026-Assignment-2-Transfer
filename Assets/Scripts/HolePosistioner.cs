@@ -1,46 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HolePosistioner : MonoBehaviour
 {
-    [SerializeField] GameObject GolfBall;
-    [SerializeField] GameObject Hole1Posistion;
-    public void Hole1 ()
+    public static int LevelSelect = 0;
+    public void LoadLevel1()
     {
-        GolfBall.transform.localPosition = Hole1Posistion.transform.localPosition;
+        LevelSelect = LevelSelect = 1;
+        SceneManager.LoadScene("Game Test Level");
     }
-    public void Hole2()
-    {
 
-    }
-    public void Hole3()
+    public void LoadLevel2()
     {
-
+        LevelSelect = LevelSelect = 2;
+        SceneManager.LoadScene("Game Test Level");
     }
-    public void Hole4()
+
+    public void LoadLevel3()
     {
-
+        LevelSelect = LevelSelect = 3;
+        SceneManager.LoadScene("Game Test Level");
     }
-    public void Hole5()
+
+    public void LoadLevel4()
     {
-
+        LevelSelect = LevelSelect = 4;
+        SceneManager.LoadScene("Game Test Level");
     }
-    public void Hole6()
+    
+    public void LoadLevel5()
     {
-
+        LevelSelect = LevelSelect = 5;
+        SceneManager.LoadScene("Game Test Level");
     }
-    public void Hole7()
+
+    public void LoadLevel6()
     {
-
+        LevelSelect = LevelSelect = 6;
+        SceneManager.LoadScene("Game Test Level");
     }
-    public void Hole8()
+
+    public void LoadLevel7()
     {
-
+        LevelSelect = LevelSelect = 7;
+        SceneManager.LoadScene("Game Test Level");
     }
-    public void Hole9()
+
+    public void LoadLevel8()
     {
-
+        LevelSelect = LevelSelect = 8;
+        SceneManager.LoadScene("Game Test Level");
     }
+
+    public void LoadLevel9()
+    {
+        LevelSelect = LevelSelect = 9;
+        SceneManager.LoadScene("Game Test Level");
+    }  
    
 }
