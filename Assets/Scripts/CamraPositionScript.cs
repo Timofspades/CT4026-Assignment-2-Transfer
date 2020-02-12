@@ -15,6 +15,9 @@ public class CamraPositionScript : MonoBehaviour
     float YRot;
 
     public float RotationSpeed;
+    public float MobileRotationSpeedScalar = 0.2f;
+
+    private bool MobileZonePressed = false;
     void Start()
     {
         Vector3 currentEuler = CamPivot.transform.eulerAngles;
@@ -33,8 +36,9 @@ public class CamraPositionScript : MonoBehaviour
         float X = 0f;
         float Y = 0f;
 #if UNITY_STANDLONE || UNITY_EDITOR
-        X = Input.GetAxis("Mouse X");
-        Y = Input.GetAxis("Mouse Y");
+        X = Input.GetAxis("Mouse X") * RotationSpeed;
+        Y = Input.GetAxis("Mouse Y") * RotationSpeed;
+
 #elif UNITY_ANDROID
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -44,8 +48,8 @@ public class CamraPositionScript : MonoBehaviour
                 case TouchPhase.Began:
                     break;
                 case TouchPhase.Moved:
-                    X = touch.deltaPosition.x;
-                    Y = touch.deltaPosition.y;
+                    X = touch.deltaPosition.x * (RotationSpeed * MobileRotationSpeedScalar);
+                    Y = touch.deltaPosition.y * (RotationSpeed * MobileRotationSpeedScalar);
                     break;
                 case TouchPhase.Stationary:
                     break;
@@ -57,12 +61,13 @@ public class CamraPositionScript : MonoBehaviour
         }
 #endif
 
-
-
-        if (Input.GetMouseButton(1))
-        {
-            ZRot -= Y * RotationSpeed * Time.deltaTime;
-            YRot += X * RotationSpeed * Time.deltaTime;
+        //#if UNITY_STANDALONE || UNITY_EDITOR
+        //        if (Input.GetMouseButton(1))
+        //#endif
+        if (MobileZonePressed)
+        {            
+            ZRot -= Y * Time.deltaTime;
+            YRot += X * Time.deltaTime;
 
             ZRot = Mathf.Clamp(ZRot, -15f, 80f);
 
@@ -70,5 +75,15 @@ public class CamraPositionScript : MonoBehaviour
 
             CamPivot.transform.rotation = Quaternion.Euler(ZRot, YRot, currentEuler.z);
         }
+    }
+
+    public void OnMobileZoneDown()
+    {
+        MobileZonePressed = true;
+    }
+
+    public void OnMobileZoneUp()
+    {
+        MobileZonePressed = false;
     }
 }
