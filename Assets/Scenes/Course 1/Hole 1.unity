@@ -343,7 +343,7 @@ RectTransform:
   - {fileID: 1136656498}
   - {fileID: 1796089889}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1830,7 +1830,7 @@ RectTransform:
   - {fileID: 2008782789}
   - {fileID: 1914551878}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2161,6 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   YouWin: {fileID: 0}
   UI: {fileID: 0}
+  Socre2: {fileID: 0}
 --- !u!65 &1142497070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2387,7 +2388,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207745370
 GameObject:
@@ -3360,6 +3361,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495679538}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1561266451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561266452}
+  m_Layer: 5
+  m_Name: ScoreWinPosisiton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1561266452
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561266451}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1355, y: 770}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1615427040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4297,7 +4333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a995a5a014db14797c97d3ce5200fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WinCanvas: {fileID: 205008618}
 --- !u!1 &2015298105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,6 +4834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   YouWin: {fileID: 205008618}
   UI: {fileID: 1041809255}
+  Socre2: {fileID: 472523011}
 --- !u!65 &5691104116796234573
 BoxCollider:
   m_ObjectHideFlags: 0
