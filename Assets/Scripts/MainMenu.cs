@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame ()
+    public void Hole1 ()
     {
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole1");
     }
 
     public void Options()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Menu()
     {
         SceneManager.LoadScene("Main Menu");
     }

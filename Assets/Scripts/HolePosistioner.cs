@@ -7,57 +7,48 @@ public class HolePosistioner : MonoBehaviour
 {
     public static int LevelSelect = 0;
     public void LoadLevel1()
-    {
-        LevelSelect = LevelSelect = 1;
-        SceneManager.LoadScene("Game Test Level");
+    {        
+        SceneManager.LoadScene("Hole 1");
     }
 
     public void LoadLevel2()
     {
-        LevelSelect = LevelSelect = 2;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 2");
     }
 
     public void LoadLevel3()
     {
-        LevelSelect = LevelSelect = 3;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 3");
     }
 
     public void LoadLevel4()
     {
-        LevelSelect = LevelSelect = 4;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 4");
     }
     
     public void LoadLevel5()
     {
-        LevelSelect = LevelSelect = 5;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 5");
     }
 
     public void LoadLevel6()
     {
-        LevelSelect = LevelSelect = 6;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 6");
     }
 
     public void LoadLevel7()
     {
-        LevelSelect = LevelSelect = 7;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 7");
     }
 
     public void LoadLevel8()
     {
-        LevelSelect = LevelSelect = 8;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 8");
     }
 
     public void LoadLevel9()
     {
-        LevelSelect = LevelSelect = 9;
-        SceneManager.LoadScene("Game Test Level");
+        SceneManager.LoadScene("Hole 9");
     }  
    
 }

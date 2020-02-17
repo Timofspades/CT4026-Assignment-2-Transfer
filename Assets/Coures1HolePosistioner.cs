@@ -26,8 +26,8 @@ public class Coures1HolePosistioner : MonoBehaviour
 
         if (2 == HolePosistioner.LevelSelect)
         {
-            Player.transform.localPosition = Hole2Posistion.transform.localPosition;
-            Player2.transform.localPosition = Hole2Posistion.transform.localPosition;
+            Player.transform.position = Hole2Posistion.transform.position;
+            Player2.transform.position = Hole2Posistion.transform.position;
 
             Player.transform.localRotation = Hole2Posistion.transform.localRotation;
             Player2.transform.localRotation = Hole2Posistion.transform.localRotation;

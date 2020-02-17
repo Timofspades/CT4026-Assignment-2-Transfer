@@ -6,14 +6,16 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    int Strokes = 0;
+    static int Strokes = 0;
+
+    [SerializeField] GameObject WinCanvas;
 
     private void Update()
     {
         GameObject.Find("Score").GetComponent<Text>().text = Strokes.ToString();
-    }
-
-
+        GameObject.Find("Score2").GetComponent<Text>().text = Strokes.ToString();
+    }    
+    
     public void addStroke()
     {
         Strokes++;
