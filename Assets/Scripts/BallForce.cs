@@ -14,6 +14,8 @@ public class BallForce : MonoBehaviour
     private Slider PowerSlider;
     void Start()
     {
+        currentScore = 0;
+
         PowerSlider = GetComponent<Slider>();       
 
         maincamera = GameObject.FindGameObjectWithTag("MainCamera");
