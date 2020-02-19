@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Hole1Win : MonoBehaviour
 {
-    static int Strokes = 0;
-
     [SerializeField] GameObject YouWin;
     [SerializeField] GameObject UI;
-    [SerializeField] GameObject Socre2;
+    [SerializeField] Text Socre2;
+
+    [SerializeField] int HoleNumber;
 
     void OnTriggerEnter(Collider col)
     {
@@ -17,12 +17,12 @@ public class Hole1Win : MonoBehaviour
         {           
             YouWin.SetActive(true);
 
-            GameObject.Find("Score2").GetComponent<Text>().text = Strokes.ToString();
+            Socre2.text = Score.Strokes.ToString();
+
+            //Score.GetHighScore(HoleNumber
 
             UI.SetActive(false);
             
         }
     }
 }
-
-//GameObject.Find("Score2").GetComponent<Text>().text = Strokes.ToString();

@@ -21,19 +21,11 @@ public class BallForce : MonoBehaviour
         maincamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    void Update()
-    {        
-        //Score.text = currentScore.ToString();
-    }
-
-
 
     public void OnEndDrag()
     {
         BallRigidBody.AddForce(maincamera.transform.forward * PowerSlider.value);
         PowerSlider.value = 0f;
-        GetComponent<ScoreScript>().addStroke();
-        //currentScore += 1;
-        
+        GetComponent<ScoreScript>().addStroke();        
     }
 }
