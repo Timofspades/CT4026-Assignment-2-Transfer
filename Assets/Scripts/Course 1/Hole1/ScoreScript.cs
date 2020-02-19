@@ -27,7 +27,7 @@ public class Score
 {
     private void Start()
     {
-        
+        Score.Strokes = 0;
     }
 
     private void Update()

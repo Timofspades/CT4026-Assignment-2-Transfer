@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class BallForce : MonoBehaviour
 {
-    float currentScore = 0f;
-    //public Text Score;
+    float currentScore = 0f;    
 
     private GameObject maincamera;
     public Rigidbody BallRigidBody;
