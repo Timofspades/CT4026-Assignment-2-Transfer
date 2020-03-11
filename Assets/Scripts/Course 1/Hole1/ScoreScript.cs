@@ -18,6 +18,28 @@ public class Score
     public static int GetHighScore(int a_course, int a_hole)
     {
         return HighScores[1 * (a_course - 1) + (a_hole - 1)];
+    }    
+
+    public static void SaveHighScores()
+    {
+        for(int course = 1; course < MaxCourses + 1; ++course)
+        {
+            for(int hole = 1; hole < MaxHoles + 1; ++hole)
+            {
+                PlayerPrefs.SetInt("C" + course + "H" + hole, GetHighScore(course, hole));
+            }
+        }
+    }
+
+    public static void LoadHighScores()
+    {
+        for (int course = 1; course < MaxCourses + 1; ++course)
+        {
+            for (int hole = 1; hole < MaxHoles + 1; ++hole)
+            {
+                SetHighScore(course, hole, PlayerPrefs.GetInt("C" + course + "H" + hole));
+            }
+        }
     }
 }
 

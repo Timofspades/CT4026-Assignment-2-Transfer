@@ -21,7 +21,12 @@ public class Hole1Win : MonoBehaviour
 
             Socre2.text = CurrentScore.ToString();
 
-            //int BestScore = Score.GetHighScore(HoleNumber
+            int BestScore = Score.GetHighScore(GameState.Currentcourse, GameState.Currenthole);
+
+            if(CurrentScore < BestScore || BestScore == 0)
+            {
+                Score.SetHighScore(GameState.Currentcourse, GameState.Currenthole, CurrentScore);
+            }
 
             UI.SetActive(false);
             

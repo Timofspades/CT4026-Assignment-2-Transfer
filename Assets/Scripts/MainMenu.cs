@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    private static bool scoresLoaded = false;
+    private void Awake()
+    {
+        if(scoresLoaded == false)
+        {
+            scoresLoaded = true;
+            Score.LoadHighScores();
+        }
+    }
+
     public void Hole1 ()
     {
         SceneManager.LoadScene("Hole1");
@@ -22,6 +33,7 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame ()
     {
+        Score.SaveHighScores();
         Application.Quit();
     }
 }
