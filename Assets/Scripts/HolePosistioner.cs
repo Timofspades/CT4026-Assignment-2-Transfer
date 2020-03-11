@@ -8,8 +8,9 @@ public class HolePosistioner : MonoBehaviour
     public static int LevelSelect = 0;
     public static int CourseNum;
     public void LoadLevel (int HoleNum)
-    {        
-        SceneManager.LoadScene("Hole " + HoleNum);
+    {
+        GameState.Currenthole = HoleNum;
+        SceneManager.LoadScene("C" + GameState.Currentcourse + " H" + HoleNum);
     }
 
 }

@@ -17,9 +17,11 @@ public class Hole1Win : MonoBehaviour
         {           
             YouWin.SetActive(true);
 
-            Socre2.text = Score.Strokes.ToString();
+            int CurrentScore = Score.Strokes;
 
-            //Score.GetHighScore(HoleNumber
+            Socre2.text = CurrentScore.ToString();
+
+            //int BestScore = Score.GetHighScore(HoleNumber
 
             UI.SetActive(false);
             

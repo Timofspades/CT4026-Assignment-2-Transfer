@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HoleButtonStats : MonoBehaviour
 {
     [SerializeField]
-    private int CourseNum = 0;
-    [SerializeField]
     private int HoleNum = 0;
+    [SerializeField]
+    private Text Scoretext = null;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        Score.GetHighScore(CourseNum, HoleNum);
+        Scoretext.text = Score.GetHighScore(GameState.Currentcourse, HoleNum).ToString();
     }
 
     // Update is called once per frame
