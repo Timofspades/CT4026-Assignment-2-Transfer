@@ -14,6 +14,7 @@ public class CourseTtle : MonoBehaviour
         text = GetComponent<Text>();
     }
 
+    //this changes the name of the course depending on what the currnet coure numbert is
     private void OnEnable()
     {
         text.text = "COURSE " + GameState.Currentcourse;

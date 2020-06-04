@@ -39,6 +39,7 @@ public class CamraPositionScript : MonoBehaviour
         X = Input.GetAxis("Mouse X") * RotationSpeed;
         Y = Input.GetAxis("Mouse Y") * RotationSpeed;
 
+        //this code will only run when the game is on a Android device
 #elif UNITY_ANDROID
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -60,15 +61,13 @@ public class CamraPositionScript : MonoBehaviour
             }
         }
 #endif
-
-        //#if UNITY_STANDALONE || UNITY_EDITOR
-        //        if (Input.GetMouseButton(1))
-        //#endif
+        //this section of code allows me to control the camra when I am running the game throgh unity on my computer
         if (MobileZonePressed)
         {            
             ZRot -= Y * Time.deltaTime;
             YRot += X * Time.deltaTime;
 
+            //this clamps the movement of the camra so the player can't easily fly  look up and fly away
             ZRot = Mathf.Clamp(ZRot, -2f, 80f);
 
             Vector3 currentEuler = CamPivot.transform.eulerAngles;

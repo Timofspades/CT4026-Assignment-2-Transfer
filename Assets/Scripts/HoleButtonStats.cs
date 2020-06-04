@@ -15,7 +15,7 @@ public class HoleButtonStats : MonoBehaviour
         Scoretext.text = Score.GetHighScore(GameState.Currentcourse, HoleNum).ToString();
     }
 
-    // Update is called once per frame
+    // Updated per frame
     void Update()
     {
         

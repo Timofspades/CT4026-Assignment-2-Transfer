@@ -14,23 +14,20 @@ public class MainMenu : MonoBehaviour
             scoresLoaded = true;
             Score.LoadHighScores();
         }
-    }
-
-    public void Hole1 ()
-    {
-        SceneManager.LoadScene("Hole1");
-    }
+    }  
 
     public void Options()
     {
         SceneManager.LoadScene("Main Menu");
     }
 
+    //this void allows me to load the main menu
     public void Menu()
     {
         SceneManager.LoadScene("Main Menu");
     }
 
+    //this void will exit the game
     public void ExitGame ()
     {
         Score.SaveHighScores();

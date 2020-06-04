@@ -13,6 +13,7 @@ public class BallForce : MonoBehaviour
     private Slider PowerSlider;
     void Start()
     {
+        //sets the score at the beginning of the scene to 0
         currentScore = 0;
 
         PowerSlider = GetComponent<Slider>();       
@@ -23,8 +24,11 @@ public class BallForce : MonoBehaviour
 
     public void OnEndDrag()
     {
+        //adds force on the ball in the direction that the camra is looking
         BallRigidBody.AddForce(maincamera.transform.forward * PowerSlider.value);
+        //sets the slider value back to vero
         PowerSlider.value = 0f;
+        //adds a hit on to the current score in game
         GetComponent<ScoreScript>().addStroke();        
     }
 }
